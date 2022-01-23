@@ -35,9 +35,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Nomor Pindah</label>
+                    <label for="">Nomor Datang</label>
                     <input type="text"
-                           class="form-control" name="nomor_pindah" id="" aria-describedby="helpId" placeholder="Nomor Pindah">
+                           class="form-control" name="nomor_pindah" id="" aria-describedby="helpId" placeholder="Nomor Datang">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary mt-4">Input Data</button>

@@ -4,7 +4,7 @@
 
     <div class="container mt-5" style="margin-top: 130px !important;">
         <h1 class="justify-content-center text-center">
-            Kepindahan
+            Perpindahan
         </h1>
     </div>
 

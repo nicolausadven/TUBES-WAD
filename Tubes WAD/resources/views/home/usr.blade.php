@@ -38,7 +38,7 @@
                 </a>
             </div>
 
-            <div class="col-6">
+            <div class="col-6 justify-content-center">
                 <a href="{{url('user/kartu-anak')}}">
                     <img src="{{asset('elkatp')}}/card_kartu_anak.png">
                 </a>

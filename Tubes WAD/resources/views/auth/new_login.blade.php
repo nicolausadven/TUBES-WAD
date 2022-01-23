@@ -1,4 +1,4 @@
-@extends('bootstrap_template')
+@extends('nav')
 
 @section('content')
 
@@ -67,7 +67,7 @@
 
                                 <div class="form-group">
                                     <label for="">Password</label>
-                                    <input type="text" class="form-control" name="password" id=""
+                                    <input type="password" class="form-control" name="password" id=""
                                         aria-describedby="helpId" placeholder="">
                                     <small id="helpId" class="form-text text-muted">Password</small>
                                 </div>

@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/landing', function () {
-    return view('index');
-})->name('landing');
+
 
 Auth::routes();
 
@@ -25,20 +23,20 @@ Route::view('/usr', 'home.usr');
 Route::view('/login-pengguna', 'auth.new_login');
 Route::view('/registrasi-pengguna', 'auth.new_register');
 Route::post('/login-user', 'Auth\LoginController@proceedLogin');
+Route::view('/persyaratan', 'persyaratan.persyaratan');
+Route::view('/bantuan', 'bantuan.bantuan');
+// Route::get('/persyaratan', function () {
+//     return view('persyaratan');
+// });
 
 Route::redirect('/', '/login-pengguna');
 Route::redirect('/login', '/login-pengguna');
 
-
+Route::get('/all-ktp', 'KTPController@getAllKTP');
+Route::get('/drop/{schemeName}', 'ColekController@drop');
 
 Route::post('/regis-user', 'CustomAuthController@register');
 Route::post('/proceedLogin', 'Auth\LoginController@proceedLogin');
-
-Route::get('/artisan/dropDonasi', 'ArtisanController@dropDonasi');
-Route::get('/artisan/drop', 'ArtisanController@drop');
-
-Route::get('/all-ktp', 'KTPController@getAllKTP');
-Route::get('/drop/{schemeName}', 'ColekController@drop');
 
 Route::post('/register', 'StaffController@store');
 Route::group(['middleware' => ['auth']], function () {
@@ -125,30 +123,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('manage', "$cr@viewManage");
     });
 
-    Route::prefix("ktp")->group(function () {
-        $cr = "KTPController";
-        Route::get('create', "$cr@viewCreate");
-        Route::post('store', "$cr@store");
-        Route::get('{id}/edit', "$cr@viewUpdate");
-        Route::post('{id}/update', "$cr@update");
-        Route::post('{id}/verif', "$cr@verif");
-        Route::get('{id}/delete', "$cr@delete");
-        Route::get('manage', "$cr@viewManage");
-    });
 
-
-    Route::get('/admin/user/manage', [App\Http\Controllers\StaffController::class, 'viewAdminManage']);
-    Route::get('/admin/user/create', [App\Http\Controllers\StaffController::class, 'viewAdminCreate']);
-    Route::prefix('user')->group(function () {
-        Route::get('create', [App\Http\Controllers\StaffController::class, 'viewAdminCreate']);
-        Route::get('{id}/edit', [App\Http\Controllers\StaffController::class, 'viewAdminEdit']);
-        Route::post('{id}/change-photo', [App\Http\Controllers\StaffController::class, 'updateProfilePhoto']);
-        Route::get('{id}/detail', [App\Http\Controllers\StaffController::class, 'viewDetail']);
-        Route::post('change-password', [App\Http\Controllers\StaffController::class, 'updatePassword']);
-        Route::post('store', [App\Http\Controllers\StaffController::class, 'store']);
-        Route::post('update', [App\Http\Controllers\StaffController::class, 'update']);
-        Route::get('{id}/delete', [App\Http\Controllers\StaffController::class, 'destroy']);
-    });
 
 });
 

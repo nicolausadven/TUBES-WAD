@@ -23,9 +23,9 @@
 
         <span class="navbar-brand" href="#">
         <a href="{{'/home'}}"> <img src="{{asset('elkatp/disduk 2.png')}}" height="60px" class="d-inline-block align-top" alt=""></a>
-        <a type="button" href="{{ url('/persyaratan')}} "> <img src="{{asset('elkatp/syart.png')}}" height="60px" class="ml-3 d-inline-block align-top" alt=""></a>
-        <a type="button" href="{{ url('/bantuan')}} "> <img src="{{asset('elkatp/bantuan.png')}}" height="60px" class="d-inline-block align-top" alt=""></a>
-        </span> 
+        <a href="{{url('/persyaratan')}}"> <img src="{{asset('elkatp/syart.png')}}" height="50px" class="ml-3 d-inline-block align-top" alt=""></a>
+        <a href="{{url('/bantuan')}} "> <img src="{{asset('elkatp/bantuan.png')}}" height="50px" class="d-inline-block align-top" alt=""></a>
+        </span>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -40,6 +40,8 @@
                              alt="">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                        <a class="dropdown-item" href="{{url('/login-pengguna')}}">Login</a>
+                        <a class="dropdown-item" href="{{ url('/registrasi-pengguna') }}">Registrasi</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{url('/login-pengguna')}}">Logout</a>
                     </div>
@@ -47,16 +49,23 @@
             </ul>
 
         </div>
-
-
     </div>
 
 </nav>
 
 @yield('content')
 
-
-
+<div class="container">
+    <footer class="footer" style="background-color: #FCD484;">
+        <div class="container">
+            <div class="mx-auto py-2 text-center">
+                    <p>
+                    &copy; Made By Kelompok 7
+                    </p>
+            </div>
+        </div>
+    </footer>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -68,18 +77,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-</body>
-
-<div class="container">
-    <footer class="fixed-bottom mt-10" style="background-color: #FCD484;">
-        <div class="container">
-            <div class="mx-auto py-2 text-center">
-                    <p>
-                    &copy; Made By Kelompok 7
-                    </p>
-            </div>
-        </div>
-    </footer>
-</div>
 </body>
 </html>
